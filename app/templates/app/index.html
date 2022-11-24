@@ -1,0 +1,9 @@
+{% if films_list %}
+    <ul>
+    {% for film in films_list %}
+        <li><a href="/app/{{ film.id }}/">{{ film.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No films are available.</p>
+{% endif %}
