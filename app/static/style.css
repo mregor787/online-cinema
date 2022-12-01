@@ -1,3 +1,19 @@
+.navigation{
+	display: inline-block;
+	top: 15px;
+	position: fixed;
+	background-color: rgb(58, 57, 57);
+	
+}
+.carousel{
+	top: 50px; width: 80%; height: auto;
+	margin: auto;
+}
+.description{
+	color: white;
+	text-shadow: 0 0 6px black;
+}
+
 #slider { /*положение слайдера*/
     position: relative;
 	text-align: center;
