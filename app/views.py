@@ -20,7 +20,7 @@ def index(request):
         if films.count():
             slider_dict[category[0].title] = films[randint(1, films.count()) - 1]
     context = {'slider_dict': slider_dict, 'category_list': category_list}
-    return render(request, 'app/test.html', context)
+    return render(request, 'app/index.html', context)
 
 def detail(request, film_id):
     title = Film.objects.filter(id=film_id)[0].title
