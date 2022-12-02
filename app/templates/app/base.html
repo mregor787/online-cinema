@@ -22,7 +22,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             {% for category in category_list %}
-                                <li class="nav-item"><a class="nav-link active" aria-current="page" href="/app/{{ category.1 }}/">{{ category.0.title }}</a></li>
+                                <li class="nav-item"><a class="nav-link active" aria-current="page" href="/app/{{ category.translit }}/">{{ category.object.title }}</a></li>
                             {% endfor %}
                         </ul>
                         <form class="d-flex" role="search">

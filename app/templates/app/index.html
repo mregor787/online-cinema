@@ -15,11 +15,11 @@
             </div>
             {% for category in category_list %}
                 <div class="carousel-item">
-                    <a href="/app/{{ category.1 }}/">
-                        <img src="{% static '1.jpg' %}" class="d-block w-100" alt="not found">
+                    <a href="/app/{{ category.translit }}/">
+                        <img src="{% static category.image_path %}" class="d-block w-100" alt="not found">
                     </a>
                     <div class="carousel-caption d-none d-md-block">
-                        <p class="description">Позволь Богу Рандома выбрать за тебя {{ category.0.title }}!</p>
+                        <p class="description">Позволь Богу Рандома выбрать за тебя {{ category.object.title }}!</p>
                     </div>
                 </div>
             {% endfor %}
