@@ -1,5 +1,7 @@
 {% extends "app/base.html" %}
+{% load static %}
 {% block content %}
+
 
     <div id="carouselExampleCaptions" class="carousel slide"  data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -11,6 +13,21 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
+            <img src="{% static '1.jpg' %}" class="d-block w-100" alt="not found">
+          </div>
+          {% for category in category_list %}
+            <div class="carousel-item">
+            <a href="/app/{{ category.1 }}/">
+              <img src="{% static '1.jpg' %}" class="d-block w-100" alt="not found">
+            </a>
+              <div class="carousel-caption d-none d-md-block">
+                  <p class="description">Позволь Богу Рандома выбрать за тебя {{ category.0.title }}!</p>
+              </div>
+            </div>
+            
+          {% endfor %}
+          
+          <!-- <div class="carousel-item active">
             <img src="static/1.jpg" class="d-block w-100" alt="not found">
             <div class="carousel-caption d-none d-md-block">
                 <h5></h5>
@@ -44,7 +61,7 @@
                 <h5></h5>
                 <p class="description">Позволь Богу Рандома выбрать за тебя аниме!</p>
             </div>
-          </div>
+          </div> -->s
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
