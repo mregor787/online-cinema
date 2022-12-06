@@ -1,16 +1,24 @@
-.carousel{
-	top: 50px; width: 70%; height: auto;
+.carousel {
+	width: 70%;
+	height: auto;
 	margin: auto;
 }
-.description{
+.description {
 	color: white;
 	text-shadow: 0 0 6px black;
 }
-.nav-container{
+.nav-container {
 	width: 100%;
 	position: fixed;
 	z-index: 1;
 }
-.loginform{
+.loginform {
 	margin-left: 1%;
+}
+.main-container {
+	position: absolute;
+	top: 100px;
+}
+.main-container > h2 {
+	margin-left: 50px;
 }

@@ -13,9 +13,9 @@
             <div class="carousel-item active">
                 <img src="{% static '1.jpg' %}" class="d-block w-100" alt="not found">
             </div>
-            {% for category in category_list %}
+            {% for category in categories %}
                 <div class="carousel-item">
-                    <a href="/app/{{ category.translit }}/">
+                    <a href="{% url 'category' category.object.id %}">
                         <img src="{% static category.image_path %}" class="d-block w-100" alt="not found">
                     </a>
                     <div class="carousel-caption d-none d-md-block">

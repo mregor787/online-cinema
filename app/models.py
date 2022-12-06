@@ -16,6 +16,11 @@ class Genre(models.Model):
 class Category(models.Model):
     title = models.CharField(max_length=100)
 
+    def get_plural(self) -> str:
+        if self.title == 'аниме':
+            return self.title
+        return self.title + 'ы'
+
     def __str__(self) -> str:
         return self.title
 
