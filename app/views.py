@@ -1,3 +1,4 @@
+from random import randint
 from django.shortcuts import render
 
 from .models import Film, Category
@@ -16,6 +17,10 @@ def index(request):
     context = base_context()
     for i in range(len(context['categories'])):
         context['categories'][i]['image_path'] = f'{i + 2}.jpg'
+        films = Film.objects.filter(category=context['categories'][i]['object'].id)
+        films_num = films.count()
+        if films_num:
+            context['categories'][i]['random_film'] = films[randint(1, films_num) - 1]
     return render(request, 'app/index.html', context)
 
 def category(request, category_id):
@@ -26,3 +31,9 @@ def category(request, category_id):
     context['films'] = films
     context['category'] = category
     return render(request, 'app/category.html', context)
+
+def film(request, film_id):
+    context = base_context()
+    film = Film.objects.filter(id=film_id)[0]
+    context['film'] = film
+    return render(request, 'app/film.html', context)

@@ -1,0 +1,12 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% block content %}
+    <h2>{{ film.title }}</h2>
+    <p>{{ film.description }}</p>
+    <h3>Жанры:</h3>
+    <ul>
+        {% for genre in film.genres.all %}
+            <li>{{ genre.title }}</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

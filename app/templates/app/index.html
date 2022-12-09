@@ -15,9 +15,13 @@
             </div>
             {% for category in categories %}
                 <div class="carousel-item">
-                    <a href="{% url 'category' category.object.id %}">
+                    {% if category.random_film %}
+                        <a href="{% url 'film' category.random_film.id %}">
+                            <img src="{% static category.image_path %}" class="d-block w-100" alt="not found">
+                        </a>
+                    {% else %}
                         <img src="{% static category.image_path %}" class="d-block w-100" alt="not found">
-                    </a>
+                    {% endif %}
                     <div class="carousel-caption d-none d-md-block">
                         <p class="description">Позволь Богу Рандома выбрать за тебя {{ category.object.title }}!</p>
                     </div>
