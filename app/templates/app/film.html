@@ -1,6 +1,7 @@
 {% extends "app/base.html" %}
 {% load static %}
 {% block content %}
+    <img src="{% static film.logo_path %}" alt="no poster">
     <h2>{{ film.title }}</h2>
     <p>{{ film.description }}</p>
     <h3>Жанры:</h3>
