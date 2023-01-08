@@ -5,8 +5,8 @@
         <img class="film-poster" src="{% static film.logo_path %}" alt="no poster">
         <div class="film-info">
             <h2>{{ film.title }}</h2>
-            <p> <b>Дата выхода</b>: {{ film.year }} </p>
-            <p> <b>Жанры</b>: 
+            <p> <b>Дата выхода:</b> {{ film.year }} </p>
+            <p> <b>Жанры:</b> 
                 {% for genre in film.genres.all %}
                     {% if forloop.counter0 %}
                      / 
@@ -14,7 +14,7 @@
                     {{ genre.title }}  
                 {% endfor %}
             </p>
-            <p>{{ film.description }}</p>
+            <p> <b>Описание:</b> {{ film.description }}</p>
         </div>
     </div>
 {% endblock content %}
