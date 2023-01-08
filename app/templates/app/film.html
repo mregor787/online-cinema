@@ -1,13 +1,20 @@
 {% extends "app/base.html" %}
 {% load static %}
 {% block content %}
-    <img src="{% static film.logo_path %}" alt="no poster">
-    <h2>{{ film.title }}</h2>
-    <p>{{ film.description }}</p>
-    <h3>Жанры:</h3>
-    <ul>
-        {% for genre in film.genres.all %}
-            <li>{{ genre.title }}</li>
-        {% endfor %}
-    </ul>
+    <div class="film-page">
+        <img class="film-poster" src="{% static film.logo_path %}" alt="no poster">
+        <div class="film-info">
+            <h2>{{ film.title }}</h2>
+            <p> <b>Дата выхода</b>: {{ film.year }} </p>
+            <p> <b>Жанры</b>: 
+                {% for genre in film.genres.all %}
+                    {% if forloop.counter0 %}
+                     / 
+                    {% endif %}
+                    {{ genre.title }}  
+                {% endfor %}
+            </p>
+            <p>{{ film.description }}</p>
+        </div>
+    </div>
 {% endblock content %}

@@ -1,7 +1,15 @@
+body {
+	background-color: black;
+	color: white;
+}
+
 .carousel {
 	width: 70%;
 	height: auto;
 	margin: auto;
+	border: 7px ridge rgb(33, 37, 41);
+	background-color: rgb(33, 37, 41);
+	/* padding: 1px; */
 }
 .description {
 	color: white;
@@ -21,4 +29,21 @@
 }
 .main-container > h2 {
 	margin-left: 50px;
+}
+.film-page {
+	background-color: rgb(33, 37, 41);
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 20px;
+	border: 7px ridge rgb(33, 37, 41);
+}
+.film-poster {
+	display: inline-block;
+}
+.film-info {
+	margin-left: 30px;
+	display: inline-block;
+	vertical-align: top;
+	width: 55%;
 }
