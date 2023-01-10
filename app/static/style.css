@@ -9,7 +9,6 @@ body {
 	margin: auto;
 	border: 7px ridge rgb(33, 37, 41);
 	background-color: rgb(33, 37, 41);
-	/* padding: 1px; */
 }
 .description {
 	color: white;
@@ -26,6 +25,8 @@ body {
 .main-container {
 	position: absolute;
 	top: 100px;
+	left: 0;
+	right: 0;
 }
 .main-container > h2 {
 	margin-left: 50px;
