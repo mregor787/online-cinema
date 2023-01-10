@@ -1,5 +1,19 @@
 {% extends "app/base.html" %}
 {% load static %}
 {% block content %}
-    <h2>{{ category.title }}</h2>
+    <div class="header">
+        <p>{{ category.title }}</p>
+    </div>
+    <div class="category-page">
+        {% for film in films %}
+            <a class="film-link" href="{% url 'film' film.id %}">
+                <div class="card bg-black">
+                    <img src="{% static film.logo_path %}" class="card-img-top" alt="no poster">
+                    <div class="card-body">
+                        <p class="card-title">{{ film.title }}</p>
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
 {% endblock content %}
