@@ -36,6 +36,7 @@ body {
 	width: 80%;
 	margin-right: auto;
 	margin-left: auto;
+	margin-bottom: 50px;
 	padding: 20px;
 	border: 7px ridge rgb(33, 37, 41);
 }
@@ -48,9 +49,11 @@ body {
 	vertical-align: top;
 	width: 55%;
 }
+.film-player {
+	margin-top: 40px;
+}
 .header {
 	margin-left: 10%;
-
 }
 .header > p{ 
 	font-size: 2em;
