@@ -16,5 +16,10 @@
             </p>
             <p> <b>Описание:</b> {{ film.description }}</p>
         </div>
+        <div class="film-player">
+            <div id="kinoplayertop" data-kinopoisk="{{ film.kinopoisk_id }}" 
+            data-player="tabus,iframe,videocdn,ustore,dbhdvb,alloha"></div>
+        </div>
     </div>
+    <script src="{% static 'top.js' %}"></script>
 {% endblock content %}
