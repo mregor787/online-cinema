@@ -5,7 +5,14 @@
 добавления в базу данных через систему тикетов (сообщений в поддержку).
 
 ## Используемые технологии
-Backend сайта написан с использованием фреймворка Django, для front'а используется Bootstrap + стандартные HTML (Django templates) & CSS + JavaScript (файл top.js, отвечающий за работу плеера, взят с сайта kinoplayer.top).
+Backend сайта написан с использованием фреймворка Django, для front'а используется Bootstrap + стандартные HTML (Django templates) & CSS + JavaScript (файл `top.js`, отвечающий за работу плеера, взят с сайта [kinoplayer.top](https://kinoplayer.top/)).
+
+Для размещения сайта используется сервис [PythonAnywhere](https://pythonanywhere.com/), предоставляющий, помимо прочего (на основе бесплатного плана):
+
+1) Хранилище для файлов проекта (512 МБ);
+2) База данных MySQL/Postgres;
+3) Возможность работы в консолях Bash/MySQL;
+4) Личный адрес для сайта в формате `http(s)://username.pythonanywhere.com/`, где `username` - имя пользователя.
 
 ## Паттерны проектирования
 
