@@ -1,0 +1,85 @@
+body {
+	background-color: black;
+	color: white;
+}
+
+.carousel {
+	width: 70%;
+	height: auto;
+	margin: auto;
+	border: 7px ridge rgb(33, 37, 41);
+	background-color: rgb(33, 37, 41);
+}
+.description {
+	color: white;
+	text-shadow: 0 0 6px black;
+}
+.nav-container {
+	width: 100%;
+	position: fixed;
+	z-index: 1;
+}
+.loginform {
+	margin-left: 1%;
+}
+.main-container {
+	position: absolute;
+	top: 100px;
+	left: 0;
+	right: 0;
+}
+.main-container > h2 {
+	margin-left: 50px;
+}
+.film-page {
+	background-color: rgb(33, 37, 41);
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 50px;
+	padding: 20px;
+	border: 7px ridge rgb(33, 37, 41);
+}
+.film-poster {
+	display: inline-block;
+}
+.film-info {
+	margin-left: 30px;
+	display: inline-block;
+	vertical-align: top;
+	width: 55%;
+}
+.film-player {
+	margin-top: 40px;
+}
+.header {
+	margin-left: 10%;
+}
+.header > p{ 
+	font-size: 2em;
+}
+.category-page {
+	background-color: rgb(33, 37, 41);
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 20px;
+	border: 7px ridge rgb(33, 37, 41);
+	text-align: center;
+}
+.card {
+	width: 250px;
+	height: 475px;
+	padding: 15px;
+	display: inline-block;
+	vertical-align: top;
+	margin: 15px;
+}
+.card-title {
+	text-align: center;
+	color:white;
+	font-size: 1.2em;
+}
+.film-link {
+	text-decoration: none;
+}
