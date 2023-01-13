@@ -1,10 +1,11 @@
 from random import randint
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 from django.contrib.auth import login
 from django.contrib import messages
 
-from .models import Film, Category
+from .models import Film, Category, History, Favorite
 
 def base_context():
     categories = []
@@ -38,6 +39,39 @@ def category(request, category_id):
 def film(request, film_id):
     context = base_context()
     film = Film.objects.filter(id=film_id)[0]
+    if request.user.is_authenticated:
+        user = User.objects.get(id=request.user.id)
+        favorite = list(Favorite.objects.filter(user=user, film=film))
+        if request.method == 'POST':
+            if len(favorite):
+                favorite[0].delete()
+                context['is_favorite'] = False
+            else:
+                fav = Favorite(user=user, film=film)
+                fav.save()
+                context['is_favorite'] = True
+        else:
+            context['is_favorite'] = len(favorite)
+            history = list(History.objects.filter(user=user).order_by('-create_date'))
+            if len(history):
+                if history[0].film.id != film.id:
+                    found = False
+                    for h in history:
+                        if h.film.id == film.id:
+                            h.delete()
+                            new_h = History(user=user, film=film)
+                            new_h.save()
+                            found = True
+                            break
+                    if not found:
+                        new_h = History(user=user, film=film)
+                        new_h.save()
+                        if len(history) >= 10:
+                            last = History.objects.filter(user=user).order_by('create_date')[0]
+                            last.delete()
+            else:
+                new_h = History(user=user, film=film)
+                new_h.save()
     context['film'] = film
     return render(request, 'app/film.html', context)
 
@@ -63,3 +97,13 @@ def register(request):
     form = UserCreationForm()
     context['register_form'] = form
     return render(request, 'registration/register.html', context)
+
+def profile(request):
+    context = base_context()
+    if request.user.is_authenticated:
+        user = User.objects.get(id=request.user.id)
+        history = History.objects.filter(user=user).order_by('-create_date')
+        context['history'] = history
+        favorites = Favorite.objects.filter(user=user).order_by('-create_date')
+        context['favorites'] = favorites
+    return render(request, 'app/profile.html', context)

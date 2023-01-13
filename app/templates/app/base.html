@@ -34,6 +34,9 @@
                                 <button class="btn btn-outline-secondary" type="submit">Войти</button>
                             </form>
                         {% else %}
+                            <form class="d-flex loginform" action="{% url 'profile' %}" role="profile">
+                                <button class="btn btn-outline-secondary" type="submit">Профиль</button>
+                            </form>
                             <form class="d-flex loginform" action="{% url 'logout' %}" role="logout">
                                 <button class="btn btn-outline-secondary" type="submit">Выйти</button>
                             </form>

@@ -119,3 +119,21 @@ body {
 #div_id_username, #div_id_password1, #div_id_password2, #div_id_password {
 	margin-bottom: 20px;
 }
+.profile-page {
+	background-color: rgb(33, 37, 41);
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 50px;
+	padding: 20px;
+	border: 7px ridge rgb(33, 37, 41);
+}
+.fav-btn-div {
+	display: inline-block;
+	position: relative;
+	vertical-align: top;
+}
+.fav-btn-img {
+	width: 50px;
+	height: 50px;
+}
