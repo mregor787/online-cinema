@@ -37,3 +37,11 @@ def film(request, film_id):
     film = Film.objects.filter(id=film_id)[0]
     context['film'] = film
     return render(request, 'app/film.html', context)
+
+def search(request):
+    context = base_context()
+    query = request.GET.get('search_input')
+    context['query'] = query
+    films = Film.objects.filter(title__icontains=query)
+    context['films'] = films
+    return render(request, 'app/search.html', context)

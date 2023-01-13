@@ -55,7 +55,7 @@ body {
 .header {
 	margin-left: 10%;
 }
-.header > p{ 
+.header > p { 
 	font-size: 2em;
 }
 .category-page {
@@ -82,4 +82,11 @@ body {
 }
 .film-link {
 	text-decoration: none;
+}
+.btn-back {
+	margin-left: 50px;
+	margin-top: 20px;
+}
+.search-res-count {
+	margin-bottom: 50px;
 }
