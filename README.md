@@ -35,3 +35,9 @@ Model в MVT соответствует таковая в MVC, View соотве
 - https://docs.djangoproject.com/en/4.1/#the-model-layer
 
 В проекте BaaadFLIX он представлен файлами `models.py` и `views.py`, а также папкой `templates/`.
+
+## Кто какую часть проекта делал
+
+- 1) Белоусов Егор Леонидович ([mregor_787](https://github.com/mregor787/)): teamlead, настройка Django, весь backend (models, views, routing), размещение сайта на [PythonAnywhere](https://pythonanywhere.com/), частично работа с HTML + CSS (с исп. Bootstrap);
+- 2) Иванов Евгений Дмитриевич ([TheDarkestGrimm](https://github.com/TheDarkestGrimm/)): дизайн в проекте (логотип сайта, картинки к слайдеру, цветовая гамма, стиль), работа с HTML + CSS (с исп. Bootstrap);
+- 3) Калоев Георгий Сосланович ([george349](https://github.com/george349/)): поиск контента для базы данных (фильмы, вся информация про них, постеры), наполнение базы данных.
