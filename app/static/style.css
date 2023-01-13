@@ -90,3 +90,32 @@ body {
 .search-res-count {
 	margin-bottom: 50px;
 }
+.login-form {
+	background-color: rgb(33, 37, 41);
+	width: 65%;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 20px;
+	border: 7px ridge rgb(33, 37, 41);
+	text-align: center;
+}
+.login-form table {
+	margin: 0 auto;
+}
+.login-btn {
+	margin-top: 15px;
+}
+.register-form {
+	background-color: rgb(33, 37, 41);
+	width: 65%;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 20px;
+	border: 7px ridge rgb(33, 37, 41);
+}
+#hint_id_username, #hint_id_password1, #hint_id_password2 {
+	color: white !important;
+}
+#div_id_username, #div_id_password1, #div_id_password2, #div_id_password {
+	margin-bottom: 20px;
+}

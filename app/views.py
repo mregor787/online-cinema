@@ -1,5 +1,8 @@
 from random import randint
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login
+from django.contrib import messages
 
 from .models import Film, Category
 
@@ -45,3 +48,17 @@ def search(request):
     films = Film.objects.filter(title__icontains=query)
     context['films'] = films
     return render(request, 'app/search.html', context)
+
+def register(request):
+    context = base_context()
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            messages.success(request, 'Регистрация прошла успешно.')
+            return redirect('index')
+        messages.error(request, 'Ошибка регистрации. Форма не прошла валидацию.')
+    form = UserCreationForm()
+    context['register_form'] = form
+    return render(request, 'registration/register.html', context)

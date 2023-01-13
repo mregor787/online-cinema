@@ -29,9 +29,15 @@
                             <input class="form-control me-2" name="search_input" type="search" value="{{ query }}" aria-label="Поиск">
                             <button class="btn btn-outline-secondary" type="submit">Поиск</button>
                         </form>
-                        <form class="d-flex loginform" role="login">
-                            <button class="btn btn-outline-secondary" type="submit">Войти</button>
-                        </form>
+                        {% if not user.is_authenticated %}
+                            <form class="d-flex loginform" action="{% url 'login' %}" role="login">
+                                <button class="btn btn-outline-secondary" type="submit">Войти</button>
+                            </form>
+                        {% else %}
+                            <form class="d-flex loginform" action="{% url 'logout' %}" role="logout">
+                                <button class="btn btn-outline-secondary" type="submit">Выйти</button>
+                            </form>
+                        {% endif %}
                     </div>
                 </div>
             </nav>

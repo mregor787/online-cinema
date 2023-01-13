@@ -1,0 +1,10 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% block content %}
+    <div class="login-form">
+        <h2>Вы вышли из системы</h2>
+        <a href="{% url 'login'%}">
+            <button class="btn btn-primary login-btn">Нажмите, чтобы снова войти</button>
+        </a>
+    </div>
+{% endblock %}
