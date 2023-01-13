@@ -4,6 +4,7 @@ from pyexpat import model
 from statistics import mode
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -36,3 +37,13 @@ class Film(models.Model):
 
     def __str__(self) -> str:
         return self.title
+
+class History(models.Model):
+    film = models.ForeignKey(Film, on_delete=models.CASCADE, default=1)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
+    create_date = models.DateTimeField('date created', default=timezone.now)
+
+class Favorite(models.Model):
+    film = models.ForeignKey(Film, on_delete=models.CASCADE, default=1)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
+    create_date = models.DateTimeField('date created', default=timezone.now)

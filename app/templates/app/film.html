@@ -16,6 +16,22 @@
             </p>
             <p> <b>Описание:</b> {{ film.description }}</p>
         </div>
+        {% if user.is_authenticated %}
+        <div class="fav-btn-div">
+            <form action="{% url 'film' film.id %}" method="post">
+                {% csrf_token %}
+                {% if is_favorite %}
+                    <button type="submit" id="favorite" name="fav_off" class="btn btn-secondary">
+                        <img src="{% static 'fav2.png' %}" class="fav-btn-img">
+                    </button>
+                {% else %}
+                    <button type="submit" id="favorite" name="fav_on" class="btn btn-secondary">
+                        <img src="{% static 'fav1.png' %}" class="fav-btn-img">
+                    </button>
+                {% endif %}
+            </form>
+        </div>
+        {% endif %}
         <div class="film-player">
             <div id="kinoplayertop" data-kinopoisk="{{ film.kinopoisk_id }}" 
             data-player="tabus,iframe,videocdn,ustore,dbhdvb,alloha"></div>

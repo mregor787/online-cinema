@@ -1,0 +1,47 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% block content %}
+    {% if not user.is_authenticated %}
+        <h2>Вы не вошли в систему!</h2>
+        <a href="{% url 'login'%}">
+            <button class="btn btn-primary login-btn">Нажмите, чтобы войти</button>
+        </a>
+    {% else %}
+        <div class="header">
+            <p>Профиль</p>
+            <p>Добро пожаловать, {{ user.username }}!</p>
+        </div>
+        <div class="profile-page">
+            <h2>История просмотра</h2>
+            {% if not history %}
+                <p>Вы не посмотрели ни один фильм!</p>
+            {% else %}
+                {% for h in history %}
+                    <a class="film-link" href="{% url 'film' h.film.id %}">
+                        <div class="card bg-black">
+                            <img src="{% static h.film.logo_path %}" class="card-img-top" alt="no poster">
+                            <div class="card-body">
+                                <p class="card-title">{{ h.film.title }}</p>
+                            </div>
+                        </div>
+                    </a>
+                {% endfor %}
+            {% endif %}
+            <h2>Избранное</h2>
+            {% if not favorites %}
+                <p>Вы не добавили ни один фильм в избранное!</p>
+            {% else %}
+                {% for f in favorites %}
+                    <a class="film-link" href="{% url 'film' f.film.id %}">
+                        <div class="card bg-black">
+                            <img src="{% static f.film.logo_path %}" class="card-img-top" alt="no poster">
+                            <div class="card-body">
+                                <p class="card-title">{{ f.film.title }}</p>
+                            </div>
+                        </div>
+                    </a>
+                {% endfor %}
+            {% endif %}
+        </div>
+    {% endif %}
+{% endblock content %}
