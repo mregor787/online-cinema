@@ -58,7 +58,8 @@ def register(request):
             login(request, user)
             messages.success(request, 'Регистрация прошла успешно.')
             return redirect('index')
-        messages.error(request, 'Ошибка регистрации. Форма не прошла валидацию.')
+        else:
+            messages.error(request, 'Ошибка регистрации. Форма не прошла валидацию.')
     form = UserCreationForm()
     context['register_form'] = form
     return render(request, 'registration/register.html', context)
