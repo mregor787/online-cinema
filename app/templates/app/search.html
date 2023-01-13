@@ -1,0 +1,24 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% block content %}
+    {% if films %}
+        <h2 class="search-res-count">Результатов: {{ films.count }}</h2>
+        <div class="category-page">
+            {% for film in films %}
+                <a class="film-link" href="{% url 'film' film.id %}">
+                    <div class="card bg-black">
+                        <img src="{% static film.logo_path %}" class="card-img-top" alt="no poster">
+                        <div class="card-body">
+                            <p class="card-title">{{ film.title }}</p>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    {% else %}
+        <h2>Поиск не дал результатов</h2>
+        <a href="{% url 'index' %}">
+            <button class="btn btn-outline-secondary btn-back">Назад</button>
+        </a>
+    {% endif %}
+{% endblock content %}

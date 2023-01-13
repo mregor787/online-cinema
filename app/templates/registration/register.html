@@ -1,0 +1,15 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="register-form">
+        <h2>Регистрация</h2>
+        <p>Введите имя пользователя и пароль, затем повторите пароль:</p>
+        <form method="post">
+            {% csrf_token %}
+            {{ register_form|crispy }}
+            <button class="btn btn-primary" type="submit">Зарегистрироваться</button>
+        </form>
+        <p class="text-center">Если у вас уже есть аккаунт, <a href="{% url 'login' %}">войдите</a>.</p>
+    </div>
+{% endblock %}
