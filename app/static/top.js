@@ -245,7 +245,7 @@ function getResponseKinoplayertop(post=true,el='') {
       updateStopPostKinoplayertop(); 
      }
 	
-	httpGetAsyncKinoplayertop(window.location.protocol + '//kinoplayer.online', getDataKinoplayertop(el), function (players) {
+	httpGetAsyncKinoplayertop(window.location.protocol + '//kinoplayer.store', getDataKinoplayertop(el), function (players) {
 	
 	if (typeof players.iframe === 'undefined' || !players.iframe.trim()) {
 		showErrorButtonKinoplayertop();
